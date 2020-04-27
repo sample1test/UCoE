@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMIN</title>
+</head>
+
+<body>
+    <h1>ADD NEWS</h1>
+    <form method="POST">
+        <input type="text" name="headline" placeholder="Headline">
+        <input type="text" name="story" placeholder="Story">
+        <button type="submit" name="submit" value="add">POST</button>
+    </form>
+
+    <form method="POST">
+        <button type="submit" name="submit" value="home">HOME</button>
+    </form>
+
+    <h1>Queries</h1>
+    {% for dict_item in query.values()|reverse %}
+    <li>
+        {% for key, value in dict_item.items() %}
+        <h3>Email: {{key}}</h3>
+        <h3>Name: {{value[0]}}</h3>
+        <h3>Query: {{value[1]}}</h3>
+        {% endfor %}
+    </li>
+    {% endfor %}
+
+</body>
+
+</html>

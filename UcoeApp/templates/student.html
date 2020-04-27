@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>WELCOME {{user_detail}}</h1>
+
+    <br>
+    <br>
+
+    <h1>NEWS</h1>
+    {% for dict_item in news.values()|reverse %}
+    {% for key, value in dict_item.items() %}
+    <h2>Headline: {{key}}</h2>
+    <h3>Story: {{value}}</h3>
+    {% endfor %}
+    {% endfor %}
+</body>
+
+</html>
